@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hotel App</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+</head>
+
+<body>
+
+<div class="header">
+  <input type="month" id="month">
+</div>
+
+<div class="calendar" id="calendar"></div>
+
+<div class="fab" onclick="openMenu()">+</div>
+
+<!-- MENU -->
+<div class="modal" id="menuModal">
+  <button onclick="openRoom()">+ Thêm phòng</button>
+</div>
+
+<!-- ROOM -->
+<div class="modal" id="roomModal">
+  <h3>Thêm phòng</h3>
+  <input id="roomCode" placeholder="Mã phòng">
+  <select id="roomType">
+    <option value="studio">Studio</option>
+    <option value="2ngu">2 ngủ</option>
+    <option value="3ngu">3 ngủ</option>
+  </select>
+  <input id="opCost" placeholder="Giá vận hành">
+  <input id="import" placeholder="Giá nhập">
+  <input id="sell" placeholder="Giá bán">
+  <button onclick="addRoom()">Lưu</button>
+</div>
+<div class="overlay" onclick="closeAll()"></div>
+<!-- BOOKING -->
+<div class="modal" id="bookingModal">
+  <h3>Booking</h3>
+  <input id="name" placeholder="Tên khách">
+  <input id="phone" placeholder="SĐT">
+  <select id="room"></select>
+  <button onclick="saveBooking()">Lưu</button>
+</div>
+
+<!-- JS -->
+<script src="js/firebase-config.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
+
